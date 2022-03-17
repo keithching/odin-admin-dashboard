@@ -1,0 +1,321 @@
+:root {
+    --theme-background-color: rgb(0, 115, 255);
+    --header-background-color: white;
+    --secondary-background-color: rgba(211, 211, 211, 0.6);
+}
+
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    background-color: var(--theme-background-color);
+    padding: 20px;
+    color: white;
+    display: grid;
+    grid-auto-rows: auto;
+    align-content: start;
+    gap: 50px;
+}
+
+.header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: var(--header-background-color);
+    display: grid;
+    gap: 20px;
+    align-content: space-between;
+    padding: 20px;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.main-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: var(--secondary-background-color);
+}
+
+.sidebar .top {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    font-size: 20px;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.sidebar .navigation,
+.sidebar .bottom {
+    display: grid;
+    grid-auto-rows: 20px;
+    gap: 20px;
+}
+
+.sidebar .navigation > div,
+.sidebar .bottom > div {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 10px;
+}
+
+.sidebar .top .logo,
+.sidebar .nav-logo {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(313deg) brightness(104%) contrast(101%);
+}
+
+.brand,
+.nav-name {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.header .top {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 50px;
+}
+
+.header .top .left {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 20px;
+}
+
+.header .top .search-bar-input #header-input {
+    width: 500px;
+    border-radius: 10px;
+    background-color: var(--secondary-background-color);
+    border-style: none;
+    padding: 5px;
+}
+
+.header .top .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-self: right;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.header .top .right .user-avatar {
+    width: 30px;
+    height: 30px;
+}
+
+.header .bottom .left .user-avatar {
+    width: 60px;
+    height: 60px;
+}
+
+.header .top .right .user-avatar img,
+.header .bottom .left .user-avatar img {
+    border-radius: 50%;
+    background-color: yellow;
+    height: 100%;
+    width: 100%;
+}
+
+.header .bottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.header .bottom .left {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.header .bottom .left .greetings {
+    display: grid;
+    gap: 2px;
+    font-weight: bold;
+}
+
+.header .bottom .left .greetings .message {
+    font-size: 12px;
+}
+
+.header .bottom .left .greetings .user-name {
+    font-size: 18px;
+}
+
+.header .bottom .right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+.header .bottom .right .button button {
+    width: 80px;
+    color: white;
+    border-style: none;
+    font-family: inherit;
+    background-color: var(--theme-background-color);
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    padding: 20px;
+    gap: 50px;
+}
+
+.projects, 
+.announcements, 
+.trending {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.projects .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+}
+
+.cards .card {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border-left: 10px solid gold;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    padding: 20px;
+}
+
+.card .card-title {
+    font-weight: bold;
+}
+
+.card .card-content {
+    color: grey;
+    font-size: 12px;
+}
+
+.card .card-utilities {
+    justify-self: end;
+}
+
+.card .card-utilities button {
+    border-style: none;
+    background-color: transparent;
+}
+
+.main-right {
+    display: grid;
+    gap: 50px;
+}
+
+.announcements .container {
+    display: grid;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+.announcements .container .announcement-title {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.announcements .container .announcement-content {
+    color: grey;
+    font-size: 12px;
+    /* Ellipsis to multiline text */
+    /* https://kiranworkspace.com/ellipsis-to-multiline-text-in-css/ */
+    text-overflow:ellipsis;
+    overflow:hidden;
+    /* Addition lines for 2 line or multiline ellipsis */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.separator {
+    margin: 20px 0 0 0;
+    border-top: 1px solid lightgrey;
+}
+
+.trending .container {
+    display: grid;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+    padding: 20px;
+    gap: 10px;
+    align-content: space-around;
+}
+
+.trending .container > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.trending .container > div .avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.trending .container > div .avatar img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.trending .container > div .right {
+    display: grid;
+    gap: 2px;
+    font-size: 14px;
+}
+
+.trending .container > div .right .bottom {
+    color: grey;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.footer a {
+    color: black;
+    font-size: 12px;
+}
